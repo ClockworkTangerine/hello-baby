@@ -1,0 +1,743 @@
+---
+# Site style
+---
+@import url(animate.css);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(//fonts.googleapis.com/css?family=Damion|Lato:400,700|Roboto:400,700);
+/*========================================================
+                      Main Styles
+=========================================================*/
+body {
+  color: #a0a5b1;
+  font: 400 14px/20px "Roboto", sans-serif;
+  -webkit-text-size-adjust: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, .head1, h2, .head2, h3, .head3, h4, .head4, h5, .head5, h6, .head6 {
+  line-height: 1.2;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+h1, .head1 {
+  font-size: 80px;
+}
+@media (max-width: 991px) {
+  h1, .head1 {
+    font-size: 40px;
+  }
+}
+
+h2, .head2 {
+  font-size: 72px;
+}
+h2 span, .head2 span {
+  font-size: 150px;
+  line-height: 0.9;
+}
+@media (max-width: 767px) {
+  h2, .head2 {
+    font-size: 30px;
+  }
+  h2 span, .head2 span {
+    font-size: 60px;
+    line-height: 0.9;
+  }
+}
+
+h3, .head3 {
+  font-size: 36px;
+}
+
+h4, .head4 {
+  font-size: 24px;
+}
+
+h5, .head5 {
+  font-size: 20px;
+}
+
+h6, .head6 {
+  font-size: 14px;
+}
+
+p a:hover, .marked-list a:hover, .list a:hover {
+  text-decoration: underline;
+}
+p .fa, .marked-list .fa, .list .fa {
+  text-decoration: none;
+}
+
+.fw-b {
+  font-weight: 700;
+}
+
+.fw-n {
+  font-weight: 400;
+}
+
+time {
+  display: block;
+}
+
+a {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+a:focus {
+  outline: none;
+}
+a:active {
+  background-color: transparent;
+}
+
+a[href^="tel:"],
+a[href^="callto:"] {
+  color: inherit;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.fa {
+  line-height: inherit;
+}
+
+[class*='fa-']:before {
+  font-weight: 400;
+  font-family: "FontAwesome";
+}
+
+.page {
+  overflow: hidden;
+  min-height: 500px;
+}
+.lt-ie9 .page {
+  min-width: 1200px;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-secondary {
+  color: #a8acb7;
+}
+
+.text-base {
+  color: #a0a5b1;
+}
+
+.text-primary {
+  color: #d15f70;
+}
+
+.text-primary-dark {
+  color: #c56671;
+}
+
+.ff_skin {
+  font-family: 'Damion', sans-serif;
+}
+
+@media (max-width: 767px) {
+  .center767 {
+    text-align: center;
+  }
+  .center767 * {
+    text-align: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .center991 {
+    text-align: center;
+  }
+  .center991 * {
+    text-align: center;
+  }
+}
+
+.img-circle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.img-border {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/*=======================================================
+                       Main Layout
+=========================================================*/
+* + p {
+  margin-top: 13px;
+}
+
+p + h3 {
+  margin-top: 35px;
+}
+
+h3 + h4 {
+  margin-top: 6px;
+}
+
+* + .btn {
+  margin-top: 30px;
+}
+
+.row + .row {
+  margin-top: 0px;
+}
+
+h2 + p.text-primary-dark {
+  margin-top: 22px;
+}
+
+/*=======================================================
+                        Components
+=========================================================*/
+/*==================     Brand     ======================*/
+.brand {
+  display: inline-block;
+}
+.brand_name {
+  color: #d15f70;
+  font-family: 'Damion', sans-serif;
+  font-size: 150px;
+}
+.brand_name span {
+  margin-left: -20px;
+}
+.brand_slogan {
+  font-size: 80px;
+  margin-top: -30px;
+  display: block;
+}
+@media (max-width: 991px) {
+  .brand_name {
+    font-size: 46px;
+  }
+  .brand_name span {
+    margin-left: -5px;
+  }
+  .brand_slogan {
+    font-size: 30px;
+    margin-top: -12px;
+  }
+}
+
+/*==================   Countdown   ======================*/
+.countdown {
+  margin-top: 62px;
+}
+
+.countdown-rtl {
+  direction: rtl;
+}
+
+.countdown-holding span {
+  color: #d15f70;
+}
+
+.countdown-row {
+  clear: both;
+}
+
+.countdown-section {
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #d15f70;
+  text-align: center;
+  background: url("../images/contdown-bg-icon.png") 100% 100% no-repeat;
+  background-size: contain;
+  width: 182px;
+  height: 182px;
+  padding-top: 40px;
+}
+
+.countdown-section + .countdown-section {
+  position: relative;
+  margin-left: 10px;
+}
+
+.countdown-amount {
+  font-size: 72px;
+  line-height: 0.8;
+}
+
+.countdown-period {
+  display: block;
+}
+
+.countdown-amount + .countdown-period {
+  margin-top: 14px;
+}
+
+.countdown-descr {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .countdown {
+    margin-top: 20px;
+  }
+
+  .countdown-section {
+    max-width: 140px;
+    padding-top: 70px;
+  }
+
+  .countdown-amount {
+    font-size: 30px;
+    line-height: 0.8;
+  }
+
+  .countdown-section + .countdown-section {
+    margin-left: 0px;
+  }
+}
+/*==================    Article    ======================*/
+article .icon {
+  display: inline-block;
+}
+article .icon1, article .icon2, article .icon3 {
+  background: url("../images/sprite-icon.png") no-repeat;
+  position: relative;
+}
+article .icon1:before, article .icon2:before, article .icon3:before {
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+  background: url("../images/sprite-icon.png") no-repeat;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.lt-ie9 article .icon1:before, .lt-ie9 article .icon2:before, .lt-ie9 article .icon3:before {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+@media (max-width: 767px) {
+  article {
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+article .icon1 {
+  width: 132px;
+  height: 68px;
+  background-position: 2px 0px;
+  margin-bottom: 20px;
+}
+article .icon1:before {
+  width: 132px;
+  height: 68px;
+  background-position: 1px -69px;
+}
+article .icon2 {
+  width: 150px;
+  height: 39px;
+  background-position: -132px -11px;
+  margin-bottom: 33px;
+  margin-top: 18px;
+}
+article .icon2:before {
+  width: 150px;
+  height: 39px;
+  background-position: -131px -50px;
+}
+article .icon3 {
+  width: 118px;
+  height: 71px;
+  background-position: -285px -0px;
+  margin-bottom: 26px;
+  margin-top: -7px;
+}
+article .icon3:before {
+  width: 118px;
+  height: 71px;
+  background-position: -287px -71px;
+}
+article p.img-circle {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+article p.img-circle:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  display: inline-block;
+  overflow: hidden;
+  opacity: 0;
+  border: 21px solid #d15f70;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.lt-ie9 article p.img-circle:before {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+article:hover p.img-circle:before {
+  opacity: 1;
+  left: 0;
+}
+.lt-ie9 article:hover p.img-circle:before {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+  filter: alpha(opacity=100);
+}
+article:hover .icon1:before, article:hover .icon2:before, article:hover .icon3:before {
+  opacity: 1;
+}
+.lt-ie9 article:hover .icon1:before, .lt-ie9 article:hover .icon2:before, .lt-ie9 article:hover .icon3:before {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+  filter: alpha(opacity=100);
+}
+
+/*==================  Backgrounds  ======================*/
+.bg-primary {
+  background: #d15f70;
+}
+
+.bg-secondary {
+  background: #ebecee;
+}
+
+.bg-img {
+  background: url("{{ site.baseurl }}/photos/footer.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .bg-img {
+    text-align: center;
+    background-position: 40% center;
+  }
+}
+.bg-img hr {
+  position: absolute;
+  background: #fff url("../images/border-img3.png") repeat-x;
+  background-position: 100% top;
+  top: -8px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  border: none;
+}
+
+/*==================    Buttons    ======================*/
+.btn {
+  display: inline-block;
+  letter-spacing: 1.4px;
+  color: #fff;
+  background: #d15f70;
+  padding: 15px 31px 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+.btn:hover {
+  background: #a8acb7;
+}
+.btn:active {
+  background: #c5384d;
+}
+
+/*==================  RD Parallax    ======================*/
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+.parallax_image, .parallax_pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-position: center center;
+  will-change: transform;
+}
+.parallax_image {
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.parallax_pattern {
+  background-repeat: repeat;
+}
+.parallax_cnt {
+  position: relative;
+}
+
+/*==================     ToTop     ======================*/
+.toTop {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  line-height: 46px;
+  color: #fff;
+  background: #a8acb7;
+  border-radius: 50%;
+  -webkit-box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.4);
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  display: none;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  z-index: 20;
+}
+.toTop:hover {
+  color: #fff;
+  background: #d15f70;
+  text-decoration: none;
+}
+
+.mobile .toTop,
+.tablet .toTop {
+  display: none !important;
+}
+
+/*==================   Thumbnail    ======================*/
+.thumb {
+  display: block;
+  position: relative;
+  overflow: hidden !important;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.thumb img {
+  width: 100%;
+  height: auto;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.thumb_overlay {
+  position: absolute;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  color: #fff;
+  background: transparent;
+}
+.thumb_overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  display: inline-block;
+  overflow: hidden;
+  opacity: 0;
+  border: 21px solid #d15f70;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.lt-ie9 .thumb_overlay:before {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+@media (max-width: 479px) {
+  .thumb_overlay:before {
+    border: 10px solid #d15f70;
+  }
+}
+.thumb:hover .thumb_overlay {
+  opacity: 1;
+  background: rgba(209, 95, 112, 0.2);
+}
+.lt-ie9 .thumb:hover .thumb_overlay {
+  background: none;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#33D15F70', endColorstr='#33D15F70')";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33D15F70', endColorstr='#33D15F70');
+  zoom: 1;
+}
+.thumb:hover .thumb_overlay:before {
+  opacity: 1;
+  left: 0;
+}
+.lt-ie9 .thumb:hover .thumb_overlay:before {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+  filter: alpha(opacity=100);
+}
+.lt-ie9 .thumb:hover .thumb_overlay:before {
+  display: block;
+}
+
+/*========================================================
+                     HEADER  Section
+=========================================================*/
+header {
+  background: url("{{ site.baseurl }}/photos/header.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 542px;
+}
+@media (max-width: 767px) {
+  header {
+    text-align: center;
+    background-position: 40% center;
+  }
+}
+header .border-header {
+  position: absolute;
+  background: #fff url("../images/border-img.png") repeat-x;
+  background-position: 100% bottom;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 43px;
+  border: none;
+}
+
+/*========================================================
+                     CONTENT  Section
+=========================================================*/
+main {
+  display: block;
+}
+main section.shadow-mod {
+  position: relative;
+}
+main section.shadow-mod:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0;
+  top: 35px;
+  height: 35px;
+  background: transparent;
+  width: 100%;
+  -webkit-box-shadow: 0px -16px 64px 86px rgba(235, 236, 238, 0.9);
+  -moz-box-shadow: 0px -16px 64px 86px rgba(235, 236, 238, 0.9);
+  box-shadow: 0px -16px 64px 86px rgba(235, 236, 238, 0.9);
+}
+main hr {
+  position: absolute;
+  background: #fff url("../images/border-img2.png") repeat-x;
+  background-position: 100% bottom;
+  bottom: -7px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  border: none;
+}
+
+/*==================      Well     ======================*/
+.well {
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+.well2 {
+  padding-top: 65px;
+  padding-bottom: 100px;
+}
+.well2__mod {
+  padding-bottom: 698px;
+}
+
+/*========================================================
+                     FOOTER  Styles
+=========================================================*/
+footer {
+  background: #fff;
+  padding-top: 66px;
+  padding-bottom: 135px;
+}
+footer .copyright a:hover {
+  text-decoration: none;
+  color: #d15f70;
+}
+
+/*========================================================
+                     Customization
+=========================================================*/
+
+.brand + .text-secondary {
+  width: 60%;
+}
+
+.text-primary + .text-primary-dark {
+  width: 80%;
+}
+
+header .text-secondary p,
+.well article p,
+.well2 .container .text-primary-dark p {
+  margin-top: 0;
+}

@@ -1,0 +1,176 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ site.title }}</title>
+    <meta charset="utf-8">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/favicon-64x64.png" type="image/png" sizes="64x64">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/favicon-128x128.png" type="image/png" sizes="128x128">
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/favicon-180x180.png" type="image/png" sizes="180x180">
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon-180x180.png" type="image/png" sizes="180x180">
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon-180x180.png" type="image/png" sizes="180x180">
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon-256x256.png" type="image/png" sizes="256x256">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/owl-carousel.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/styleswitcher.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom.css">
+
+    <script type="application/javascript" src="{{ site.baseurl }}/assets/js/jquery.js"></script>
+    <script type="application/javascript" src="{{ site.baseurl }}/assets/js/jquery-migrate-1.2.1.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="{{ site.baseurl }}/assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script type="application/javascript" src="{{ site.baseurl }}/assets/js/device.min.js"></script>
+</head>
+<body>
+<div class="page">
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+    <header>
+        <div class="border-header"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="brand">
+                        <h1 class="brand_name">
+                            <a href="./">{{ site.data.baby.name }} <span class="text-secondary">{{ site.data.baby.surname }}</span></a>
+                            <em class="brand_slogan text-secondary">{{ page.header }}</em>
+                        </h1>
+                    </div>
+
+                    <div class="fw-b text-secondary">
+                        {{ content }}
+                    </div>
+                </div>
+            </div>
+            <div class="countdown"></div>
+        </div>
+    </header>
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+    <main>
+        <section class="well bg-secondary shadow-mod">
+            <div class="container text-center">
+                <div class="row">
+
+{% assign family_members = site.data.family | size %}
+{% assign columns = 12 | divided_by: family_members %}
+
+            {% if site.data.family %}
+                {% for member in site.data.family %}
+                    <div class="col-md-{{ columns }} col-sm-{{ columns }} col-xs-12">
+                        <article>
+                            <div class="icon {{ member.icon }}"></div>
+                            <p class="img-circle"><img class="img-circle" src="{{ member.photo }}" alt=""/></p>
+
+                            <h3 class="text-primary">{{ member.is }}</h3>
+                            <h4 class="text-secondary">{{ member.name }}</h4>
+
+                            {{ member.text | markdownify }}
+
+                            {% if member.link %}
+                            <a href="{{ member.link.url }}" class="btn">{{ member.link.title }}</a>
+                            {% endif %}
+                        </article>
+
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+                </div>
+            </div>
+            <hr/>
+        </section>
+
+    {% if page.gallery %}
+
+        {% assign photos = '' %}
+        {% for photo in site.static_files %}
+            {% if photo.path contains 'photos/gallery' %}{% unless photo.path contains 'thumbnail' %}
+                {% unless photos == '' %}{% assign photos = photos | append: "|" %}{% endunless %}
+                {% assign photos = photos | append: photo.path %}
+            {% endunless %}{% endif %}
+        {% endfor %}
+        {% assign photos = photos | split: "|" %}
+
+        <section class="parallax well2" data-url="{{ site.baseurl }}/assets/images/parallax1.jpg" data-mobile="true">
+            <div class="container">
+                <h2 class="text-primary">{{ page.gallery.title }}</h2>
+
+                <div class="text-primary-dark">
+                    {{ page.gallery.text | markdownify }}
+                </div>
+
+                <div class="owl-carousel">
+
+            {% assign items = photos.size | divided_by: 2.0 | ceil %}
+
+            {% for i in (1..items) %}
+                {% assign offset = forloop.index0 | times: 2 %}
+                    <div class="item ">
+                {% for photo in photos limit:2 offset:offset %}
+                        <a class="thumb img-circle" data-fancybox-group="1" href="{{ site.baseurl }}{{ photo }}">
+                            <img class="img-circle" src="{{ site.baseurl }}{{ photo | replace: '.jpg', '.thumbnail.jpg' }}" alt=""/>
+                            <span class="thumb_overlay img-circle"></span>
+                        </a>
+                {% endfor %}
+                    </div>
+            {% endfor %}
+
+                </div>
+
+            </div>
+        </section>
+
+    {% endif %}
+
+        <section class="well2 well2__mod bg-img">
+            <hr/>
+            <div class="container center991">
+                <h2 class="head1 ff_skin text-secondary">
+                    {{ page.goodbye.secondary }}
+                    <br/>
+                    <span>
+                        {{ page.goodbye.primary }}
+                    </span>
+                </h2>
+            </div>
+        </section>
+
+
+    </main>
+    <!--========================================================
+                              FOOTER
+    =========================================================-->
+    <footer>
+        <div class="container">
+            <p class="copyright">
+                <a class="text-secondary ff_skin head2 fw-n" href="#">
+                    {{ site.data.baby.name }} {{ site.data.baby.surname }}
+                </a>
+                <br/>
+                © <span id="copyright-year">{{ 'now' | date: "%Y" }}</span>
+                {{ site.owner }}
+                | All rights reserved
+                <br/>
+                {{ page.footer }}
+            </p>
+        </div>
+    </footer>
+</div>
+
+<script type="application/javascript" src="{{ site.baseurl }}/assets/js/script.js"></script>
+
+</body>
+</html>
